@@ -63,3 +63,27 @@ struct IconImageModifier: ViewModifier {
         }
 }
 
+struct BetCapsuleModifier: ViewModifier {
+    func body(content: Content) -> some View {
+            content
+            .foregroundColor(Color("ColorWhiteRMIT"))
+            .font(.system(size: 25, weight: .heavy, design: .rounded))
+            .modifier(ShadowModifier())
+            .background(
+                Capsule()
+                    .fill(
+                        LinearGradient(gradient: Gradient(colors: [Color("ColorYellowRMIT"), Color("ColorRedRMIT")]), startPoint: .top, endPoint: .bottom)
+                    )
+                    .frame(width: 80, height: 50, alignment: .center)
+            )
+        }
+}
+
+struct CasinoChipModifier: ViewModifier {
+    func body(content: Content) -> some View {
+            content
+            .scaledToFit()
+            .frame(height: 70)
+            .modifier(ShadowModifier())
+        }
+}
